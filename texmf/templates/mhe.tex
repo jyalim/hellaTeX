@@ -1,0 +1,24 @@
+\documentclass{article}
+\RequirePackage{basic}
+%\usepackage[colorinlistoftodos]{todonotes}
+
+\def\myauthor{Nathaniel Hellabyte}
+\def\myemail{nate@hellabit.es}
+\def\mytitle{Title}
+
+\def\totalpages{16}                        % TODO
+
+\def\mypagestyle{{\footnotesize\mytitle{} -- \myauthor\hfill%
+  Page \arabic{page} of \totalpages}}
+
+\begin{document}
+  \pagestyle{plain}
+  \setcounter{page}{1}
+  \renewcommand{\thepage}{\mypagestyle}
+
+  \
+
+  %\bibliography{bib}
+  %\bibliographystyle{plain}
+\end{document}
+
