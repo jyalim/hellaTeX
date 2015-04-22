@@ -21,6 +21,9 @@ append the following line to the `~/.bashrc` or `~/.bash_profile`:
 
 where the path `~/.local/etc/texmf` is only used as an example. Note
 that `realpath` is redundant here, but it's important to realize that
-TEXINPUTS requires an absolute path.  
+TEXINPUTS requires an absolute path. On Mac, `realpath` is not a default
+bash command, so see
+http://stackoverflow.com/questions/1055671/how-can-i-get-the-behavior-of-gnus-readlink-f-on-a-mac
+or use a static path in the config file.  
 
 
