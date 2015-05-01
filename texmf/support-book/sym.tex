@@ -1,0 +1,114 @@
+
+\def\pfp{{\small\hfill$\square$}}
+\def\pf{{\small\hfill$\blacksquare$}}
+
+\renewcommand{\qedsymbol}{{\small\hfill$\join$}} % \S
+
+\def\R{\mathbb{R}}
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\C{\mathbb{C}}
+\def\Q{\mathbb{Q}}
+\def\del{\nabla}
+
+\def\pRT{\vv{r},t}
+\def\condeq{\rho(\pRT) \; c_p(\pRT) \; \pPD{T(\pRT)}{t} = 
+  \pLpa{k(\pRT)}{\nabla T(\pRT)} + H(\pRT)}
+\def\heatfloweq{\vv{q}(\pRT) = -k(\pRT)\;\nabla T(\pRT)}
+
+% Jacobi Elliptic Functions
+\def\cn{\text{cn}}
+\def\sn{\text{sn}}
+\def\dn{\text{dn}} 
+
+\def\ot{\otimes}
+
+\renewcommand{\vec}[1]{\ensuremath{\mathchoice
+  {\mbox{\boldmath$\displaystyle\mathbf{#1}$}}
+  {\mbox{\boldmath$\textstyle\mathbf{#1}$}}
+  {\mbox{\boldmath$\scriptstyle\mathbf{#1}$}} 
+  {\mbox{\boldmath$\scriptscriptstyle\mathbf{#1}$}}}
+}
+
+\def\checkmark{\tikz\fill[scale=0.4]%
+  (0,.35)--(.25,0)--(1,.7)--(.25,.15)--cycle;
+} 
+
+\def\slashmark{$\times$}
+
+\newcommand{\pPD}[2]{\frac{\partial{#1}}{\partial{#2}}}                   % ORDER 1 PARTIAL
+\newcommand{\pSPD}[3]{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}}        % ORDER S PARTIAL
+\newcommand{\pD}[2]{\frac{d{#1}}{d{#2}}}                                  % ORDER 1 STANDARD
+\newcommand{\pSD}[3]{\frac{d^{#3}{#1}}{d{#2}^{3}}}                        % ORDER S STANDARD
+\newcommand{\pGrad}[1]{\pPD{#1}{x} + \pPD{#1}{y} + \pPD{#1}{z}}           % EVAL GRADIENT
+\newcommand{\pLapl}[1]{\pSPD{#1}{x}{2} + \pPD{#1}{y}{2} + \pPD{#1}{z}{2}} % EVAL LAPLACIAN 
+\newcommand{\pSDPR}[2]{\nabla \cdot #1 #2}                                % STANDARD DIV
+\newcommand{\pEDPR}[2]{#2 \cdot \nabla #1 + #1 \nabla \cdot #2 }          % EVAL DIV
+\newcommand{\pLpc}[2]{#1 \nabla^2 #2}               % STANDARD LAPLACIAN
+\newcommand{\pEV}[3]{\left. #1 \right|_{#2}^{#3}}   % EVAL FROM #2 to #3
+\newcommand{\pIP}[1]{\left\langle #1 \right\rangle} % INNER PRODUCT
+%\newcommand{\abs}[1]{\left\vert #1 \right\vert}     % ABS
+\newcommand{\paren}[1]{\left( #1 \right)}           % Big Parenthesis
+\newcommand{\vectr}[2]{{#1 \choose #2}}             % Quick Vector Fmt
+\newcommand{\tr}[1]{\text{tr}(#1)}                  % Trace
+\newcommand{\Iv}[1]{\mathcal{I}_{#1}}               % Invariants
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lvert\lvert}{\rvert\rvert}
+\DeclarePairedDelimiter\snorm{\lvert}{\rvert}
+\DeclarePairedDelimiter\pnorm{\lparen}{\rparen}
+\DeclarePairedDelimiter\bnorm{\lbrack}{\rbrack}
+\DeclarePairedDelimiter\cnorm{\lbrace}{\rbrace}
+\DeclarePairedDelimiter\anorm{\langle}{\rangle}
+
+\newcommand{\sinp}[1]{\sin\pnorm*{#1}}
+\newcommand{\cosp}[1]{\cos\pnorm*{#1}}
+\newcommand{\tanp}[1]{\tan\pnorm*{#1}}
+\newcommand{\psin}[1]{\sin\pnorm*{#1}}
+\newcommand{\pcos}[1]{\cos\pnorm*{#1}}
+\newcommand{\ptan}[1]{\tan\pnorm*{#1}}
+
+\newcommand{\Psinp}[2]{\sin^{#1}\pnorm*{#2}}
+\newcommand{\Pcosp}[2]{\cos^{#1}\pnorm*{#2}}
+\newcommand{\Ptanp}[2]{\tan^{#1}\pnorm*{#2}}
+
+\def\R{\mathbb{R}}
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\C{\mathbb{C}}
+\def\Q{\mathbb{Q}}
+
+\def\P{\mathbb{P}}
+
+\def\o{\mathcal{o}}
+\def\O{\mathcal{O}}
+
+\def\del{\nabla}
+
+\def\pRT{\vv{r},t}
+\def\condeq{\rho(\pRT) \; c_p(\pRT) \; \pPD{T(\pRT)}{t} = 
+  \pLpa{k(\pRT)}{\nabla T(\pRT)} + H(\pRT)}
+\def\heatfloweq{\vv{q}(\pRT) = -k(\pRT)\;\nabla T(\pRT)}
+
+% Jacobi Elliptic Functions
+\def\cn{\text{cn}}
+\def\sn{\text{sn}}
+\def\dn{\text{dn}} 
+
+\def\ot{\otimes}
+
+\newcommand*{\matminus}{%
+  \leavevmode
+  \hphantom{0}%
+  \llap{%
+    \settowidth{\dimen0 }{$0$}%
+    \resizebox{1.1\dimen0 }{\height}{$-$}%
+  }%
+} % From http://tex.stackexchange.com/questions/75545/
+  % ... negative-sign-and-matrix-alignment
+  % User: Heiko Oberdiek
+\def\mm{\matminus}
+
+\input{support/var/btcsymb.tex}
+\input{support/var/ethsymb.tex}
+

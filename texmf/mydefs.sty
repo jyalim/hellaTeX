@@ -1,0 +1,231 @@
+%\NeedsTexFormat{LaTeX2e}
+%%
+
+\ProvidesPackage{mydefs}
+
+\usepackage[usenames,dvipsnames,svgnames,table,hyperref]{xcolor}
+\usepackage{fancyvrb,color,amssymb,float,alltt,verbatim,epstopdf,esvect}
+\usepackage{amsmath,mathtools,listings,multicol,enumerate} 
+\usepackage{hyperref,titlesec}
+\usepackage[labelformat=simple]{subfig}
+\usepackage[ font=footnotesize ]{caption}
+
+%% For Math spacing
+\expandafter\def\expandafter\normalsize\expandafter{%
+    \normalsize
+    \setlength\abovedisplayskip{     0pt}
+    \setlength\belowdisplayskip{     9pt}
+    \setlength\abovedisplayshortskip{0pt}
+    \setlength\belowdisplayshortskip{9pt}
+}
+
+%% For Title spacing
+\titlespacing*{   \section}{0pt}{.01\baselineskip}{.50\baselineskip}
+\titlespacing*{\subsection}{0pt}{.40\baselineskip}{.40\baselineskip}
+%
+
+%% Colors
+% Current Colors: 
+% Black Gray Blue Cyan Green Orange Red
+% 
+% Calling: 
+% p{D,R,L,}Color
+% D := Dark, R := Regular, L := Light, None := Normal ( RGB Pure )
+
+% Black
+\definecolor{pDBlack}{RGB}{35,35,35}
+\definecolor{pRBlack}{RGB}{50,50,50}
+\definecolor{pLBlack}{RGB}{65,65,65}
+\definecolor{pBlack}{RGB}{0,0,0}
+\def\pDBlack{\color{pDBlack}}
+\def\pRBlack{\color{pRBlack}}
+\def\pLBlack{\color{pLBlack}}
+\def\pBlack{\color{pBlack}}
+
+% Gray
+\definecolor{pDGray}{RGB}{85,85,85}
+\definecolor{pRGray}{RGB}{105,105,105}
+\definecolor{pLGray}{RGB}{200,200,200}
+\definecolor{pGray}{RGB}{125,125,125}
+\def\pDGray{\color{pDGray}}
+\def\pRGray{\color{pRGray}}
+\def\pLGray{\color{pLGray}}
+\def\pGray{\color{pGray}}
+
+% Blue
+\definecolor{pDBlue}{RGB}{15,111,174}
+\definecolor{pRBlue}{RGB}{0,135,205}
+\definecolor{pLBlue}{RGB}{0,000,210}
+\definecolor{pBlue}{RGB}{0,0,255}
+\def\pDBlue{\color{pDBlue}}
+\def\pRBlue{\color{pRBlue}}
+\def\pLBlue{\color{pLBlue}}
+\def\pBlue{\color{pBlue}}
+
+% Cyan
+\definecolor{pDCyan}{RGB}{0,138,144}
+\definecolor{pRCyan}{RGB}{0,138,144}
+\definecolor{pLCyan}{RGB}{0,138,144}
+\definecolor{pCyan}{RGB}{0,185,194}
+\def\pDCyan{\color{pDCyan}}
+\def\pRCyan{\color{pRCyan}}
+\def\pLCyan{\color{pLCyan}}
+\def\pCyan{\color{pCyan}}
+
+% Green
+\definecolor{pDGreen}{RGB}{17,155,109}
+\definecolor{pRGreen}{RGB}{0,134,8}
+\definecolor{pLGreen}{RGB}{0,188,141}
+\definecolor{pGreen}{RGB}{0,255,0}
+\def\pDGreen{\color{pDGreen}}
+\def\pRGreen{\color{pRGreen}}
+\def\pLGreen{\color{pLGreen}}
+\def\pGreen{\color{pGreen}}
+
+% Orange
+\definecolor{pDOrange}{RGB}{219,104,21}
+\definecolor{pROrange}{RGB}{219,104,21}
+\definecolor{pLOrange}{RGB}{219,104,21}
+\definecolor{pOrange}{RGB}{219,104,21}
+\def\pDOrange{\color{pDOrange}}
+\def\pROrange{\color{pROrange}}
+\def\pLOrange{\color{pLOrange}}
+\def\pOrange{\color{pOrange}}
+
+% Red
+\definecolor{pDRed}{RGB}{166,0,0}
+\definecolor{pRRed}{RGB}{255,52,52}
+\definecolor{pLRed}{RGB}{255,139,139}
+\definecolor{pRed}{RGB}{255,0,0}
+\def\pDRed{\color{pDRed}}
+\def\pRRed{\color{pRRed}}
+\def\pLRed{\color{pLRed}}
+\def\pRed {\color{pRed}}
+
+
+\hypersetup{
+  colorlinks,
+  citecolor=pDBlack,
+  linkcolor=pDGray,
+  urlcolor=pDCyan,%pLBlack,
+}
+
+\newcommand*{\matminus}{%
+  \leavevmode
+  \hphantom{0}%
+  \llap{%
+    \settowidth{\dimen0 }{$0$}%
+    \resizebox{1.1\dimen0 }{\height}{$-$}%
+  }%
+} % From http://tex.stackexchange.com/questions/75545/
+  % ... negative-sign-and-matrix-alignment
+  % User: Heiko Oberdiek
+\def\mm{\matminus}
+
+\def\pfp{{\small\hfill$\square$}}
+\def\pf{{\small\hfill$\blacksquare$}}
+
+\newcommand{\nGraph}[2]{
+  \begin{figure}[H]
+    \centering
+    \centerline{\includegraphics[scale=#1]{#2}}
+  \end{figure}
+}
+
+\newcommand{\wGraph}[5]{
+  \begin{figure}[H]
+    \centering
+    \captionsetup{width=#4\linewidth}
+    \centerline{\includegraphics[width=#1\linewidth]{#2}}
+    \caption{#5}
+    \label{fig#3}
+  \end{figure}
+}
+
+\newcommand{\pGraph}[4]{
+  \begin{figure}[H]
+    \centering
+    \centerline{\includegraphics[scale=#1]{#2}}
+    \caption{#4}
+    \label{fig:#3}
+  \end{figure}
+}
+
+\newcommand{\pTable}[5]{
+  \scalebox{1}{
+     \centering
+     \begin{tabular}{ #1 }  % ex: ccc
+       \multicolumn{#2}{c}{#3} \\ % Number of Columns, Title
+       \hline
+       #4 \\ % Labeling of Columns
+       \hline
+       #5 % Table Data
+       \hline
+    \end{tabular}
+  }
+}
+
+%% Subfloat -----------------------------------------------------------
+% #1 -- Subcaption for subfloat
+% #2 -- Width
+% #3 -- Path to figure
+\renewcommand{\thesubfigure}{\alph{subfigure}}   % Gets rid of letter labels
+\newcommand{\sfl}[3]{\subfloat[#1]{{\includegraphics[width=#2]{#3}}}}
+\newcommand{\lfl}[4]{\subfloat[#1]{{\includegraphics[width=#2]{#3}%
+  \label{fig:#4}}}}
+\newcommand{\nfl}[2]{\subfloat{{\includegraphics[width=#1]{#2}}}}
+\newcommand{\qfl}[3]{\subfloat{{\includegraphics[width=#1]{#2}%
+  \label{fig:#3}}}}
+% \sfl -- Subcaption subfloat
+% \lfl -- \sfl with label
+% \nfl -- \sfl without subcaption
+% \qfl -- \nfl with label
+% Ex.
+% \begin{figure}[h] %
+%   \centering
+%   \sfl{}{4in}{\figa}
+%   \\
+%   \sfl{}{2in}{\figb}
+%   \sfl{}{2in}{\figc}
+%   \caption{Major Label}
+%   \label{For referencing}
+% \end{figure}
+%% --------------------------------------------------------------------
+ 
+%\newcommand{\pUnit}[2]{\frac{#1}{#2}}
+\newcommand{\pPD}[2]{\frac{\partial{#1}}{\partial{#2}}}                   % ORDER 1 PARTIAL
+\newcommand{\pSPD}[3]{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}}        % ORDER S PARTIAL
+\newcommand{\pD}[2]{\frac{d{#1}}{d{#2}}}                                  % ORDER 1 STANDARD
+\newcommand{\pSD}[3]{\frac{d^{#3}{#1}}{d{#2}^{3}}}                        % ORDER S STANDARD
+\newcommand{\pGrad}[1]{\pPD{#1}{x} + \pPD{#1}{y} + \pPD{#1}{z}}           % EVAL GRADIENT
+\newcommand{\pLapl}[1]{\pSPD{#1}{x}{2} + \pPD{#1}{y}{2} + \pPD{#1}{z}{2}} % EVAL LAPLACIAN 
+\newcommand{\pSDPR}[2]{\nabla \cdot #1 #2}                                % STANDARD DIV
+\newcommand{\pEDPR}[2]{#2 \cdot \nabla #1 + #1 \nabla \cdot #2 }          % EVAL DIV
+\newcommand{\pLpc}[2]{#1 \nabla^2 #2}                                     % STANDARD LAPLACIAN
+\newcommand{\pEV}[3]{\left. #1 \right|_{#2}^{#3}}                         % EVAL FROM #2 to #3
+\newcommand{\pIP}[1]{\left\langle #1 \right\rangle}                       % INNER PRODUCT
+\newcommand{\abs}[1]{\left\vert #1 \right\vert}                           % ABS
+\newcommand{\paren}[1]{\left( #1 \right)}                                   % Big Parenthesis
+\newcommand{\vectr}[2]{{#1 \choose #2}}                                   % Quick Vector Fmt
+\newcommand{\tr}[1]{\text{tr}(#1)}
+
+\def\R{\mathbb{R}}
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\C{\mathbb{C}}
+\def\Q{\mathbb{Q}}
+\def\del{\nabla}
+
+\def\pRT{\vv{r},t}
+\def\condeq{\rho(\pRT) \; c_p(\pRT) \; \pPD{T(\pRT)}{t} = 
+  \pLpa{k(\pRT)}{\nabla T(\pRT)} + H(\pRT)}
+\def\heatfloweq{\vv{q}(\pRT) = -k(\pRT)\;\nabla T(\pRT)}
+
+% Jacobi Elliptic Functions
+\def\cn{\text{cn}}
+\def\sn{\text{sn}}
+\def\dn{\text{dn}} 
+
+\def\ot{\otimes}
+%% 
+\endinput
