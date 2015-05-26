@@ -4,7 +4,7 @@ cat << ____EOF
 \documentclass{article}
 \RequirePackage{basic}
 
-%\addbibresource{local.bib}
+\addbibresource{local.bib}
 
 \def\preparer{Jason Yalim}
 \def\preparerEmail{jyalim@asu.edu}
@@ -26,21 +26,25 @@ cat << ____EOF
   \pagestyle{fancy}
   \pHS
   %\pHT
-  %\frontmatter{\mypagestyle{lpfm}}
-  %\label{lpfm}~
-  \mainmatter{\mypagestyle{lpmm}}
+
+%\frontmatter{\mypagestyle{lpfm}}
+%\label{lpfm}~
+
+\mainmatter{\mypagestyle{lpmm}}
 %\required{}
 % \begin{multicols}{2}
 
 
 % \end{multicols}
-%\backmatter{\mypagestyle{lpbm}}
+
 %\section{Appendix}
-%\printbibliography
+
+\printbibliography
 \label{lpmm}~
-%\label{lpbm}~
+
 %\backmatter{\mypagestyle{lpbm}}
 %\section{Appendix}
 %\printbibliography
+%\label{lpbm}~
 \end{document}
 ____EOF
