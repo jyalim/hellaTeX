@@ -31,6 +31,9 @@
 \newcommand{\bddt}[1]{\overset{\bm ..}{#1}}
 \newcommand{\bdddt}[1]{\overset{\bm ...}{#1}}
 
+\newcommand{\mtrx}[1]{\bm{#1}} %\underline{\underline{#1}}}
+\newcommand{\vctr}[1]{\underline{#1}} %\underline{#1}}
+
 \newcommand{\matr}[1]{\bm{#1}} %\underline{\underline{#1}}}
 \newcommand{\vect}[1]{\bm{#1}} %\underline{#1}}
 
@@ -46,10 +49,11 @@
 } 
 
 \def\slashmark{$\times$}
-
+\def\pd{\partial}
 \newcommand{\pPD}[2]{\frac{\partial{#1}}{\partial{#2}}}                   % ORDER 1 PARTIAL
 \newcommand{\pSPD}[3]{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}}        % ORDER S PARTIAL
 \newcommand{\pD}[2]{\frac{d{#1}}{d{#2}}}                                  % ORDER 1 STANDARD
+\newcommand{\pMD}[2]{\frac{D{#1}}{D{#2}}}                                 % ORDER 1 Total
 \newcommand{\pSD}[3]{\frac{d^{#3}{#1}}{d{#2}^{3}}}                        % ORDER S STANDARD
 \newcommand{\pGrad}[1]{\pPD{#1}{x} + \pPD{#1}{y} + \pPD{#1}{z}}           % EVAL GRADIENT
 \newcommand{\pLapl}[1]{\pSPD{#1}{x}{2} + \pPD{#1}{y}{2} + \pPD{#1}{z}{2}} % EVAL LAPLACIAN 
@@ -71,6 +75,7 @@
 \DeclarePairedDelimiter\bnorm{\lbrack}{\rbrack}
 \DeclarePairedDelimiter\cnorm{\lbrace}{\rbrace}
 \DeclarePairedDelimiter\anorm{\langle}{\rangle}
+\DeclarePairedDelimiter\vnorm{\lvert}{\rvert}
 
 \newcommand{\sinp}[1]{\sin\pnorm*{#1}}
 \newcommand{\cosp}[1]{\cos\pnorm*{#1}}
