@@ -1,0 +1,185 @@
+%% Commands ------------------------------------------------------------
+% Contains general commands
+%-----------------------------------------------------------------------
+
+\newcommand\pref[1]{(\ref{#1})}
+\newcommand\bref[1]{\[\ref{#1}\]}
+\newcommand\cref[1]{\{\ref{#1}\}}
+
+\newcommand{\aGraph}[2]{
+  \begin{figure}[h]
+    \centering
+    \centerline{%
+      \includegraphics[%
+        width=1.45\linewidth,
+        angle=#1,%
+      ]{#2}%
+    }
+  \end{figure}
+}
+
+\newcommand{\iGraph}[3]{
+  \begin{figure}[h]
+    \centering
+    \centerline{%
+      \includegraphics[%
+        width=#1\linewidth,
+        angle=#2,%
+      ]{#3}%
+    }
+  \end{figure}
+}
+
+\newcommand{\nGraph}[2]{
+  \begin{figure}[H]
+    \centering
+    \centerline{\includegraphics[width=#1\linewidth]{#2}}
+  \end{figure}
+}
+
+\newcommand{\wGraph}[5]{
+  \begin{figure}[H]
+    \centering
+    \captionsetup{width=#4\linewidth}
+    \centerline{\includegraphics[width=#1\linewidth]{#2}}
+    \caption{#5}
+    \label{fig#3}
+  \end{figure}
+}
+
+\newcommand{\fGraph}[5]{
+  \begin{figure}[H]
+    \centering
+    \captionsetup{width=#4\linewidth}
+    \centerline{\includegraphics[width=#1\linewidth]{#2}}
+    \caption{#5}
+    \label{#3}
+  \end{figure}
+}
+
+\newcommand{\pGraph}[4]{
+  \begin{figure}[H]
+    \centering
+    \centerline{\includegraphics[scale=#1]{#2}}
+    \caption{#4}
+    \label{fig:#3}
+  \end{figure}
+}
+
+\newcommand{\pTable}[5]{
+  \scalebox{1}{
+     \centering
+     \begin{tabular}{ #1 }  % ex: ccc
+       \multicolumn{#2}{c}{#3} \\ % Number of Columns, Title
+       \hline
+       #4 \\ % Labeling of Columns
+       \hline
+       #5 % Table Data
+       \hline
+    \end{tabular}
+  }
+}
+
+%% Subfloat -----------------------------------------------------------
+% #1 -- Subcaption for subfloat
+% #2 -- Width
+% #3 -- Path to figure
+
+% TODO Switch to subcaption package from allegedly deprecated subfig
+% BUG: subfloat label not resetting in new figures
+\renewcommand{\thesubfigure}{{(\pBlue\arabic{figure}.\alph{subfigure})}} 
+\newcommand{\vfl}[2]{
+  \subfloat{{\includegraphics[width=#1\linewidth]{#2}}}
+}
+\newcommand{\wfl}[3]{
+  \subfloat[#1]{{\includegraphics[width=#2\linewidth]{#3}}}
+}
+\newcommand{\xfl}[4]{
+  \subfloat[#1]{{\includegraphics[width=#2\linewidth]{#3}
+  \label{fig#4}}}
+}
+\newcommand{\ffl}[4]{
+  \subfloat[#1]{{\includegraphics[width=#2\linewidth]{#3}
+  \label{#4}}}
+}
+\newcommand{\pgfl}[3]{
+  \subfloat[#1]{%
+    #2
+    \label{#3}
+  }
+}
+\newcommand{\pgfq}[2]{
+  \subfloat[#1]{%
+    #2
+  }
+}
+
+\newcommand{\sfl}[3]{\subfloat[#1]{{\includegraphics[width=#2]{#3}}}}
+\newcommand{\lfl}[4]{\subfloat[#1]{{\includegraphics[width=#2]{#3}%
+  \label{fig:#4}}}}
+\newcommand{\nfl}[2]{\subfloat{{\includegraphics[width=#1]{#2}}}}
+\newcommand{\qfl}[3]{\subfloat{{\includegraphics[width=#1]{#2}%
+  \label{fig:#3}}}}
+% \sfl -- Subcaption subfloat
+% \lfl -- \sfl with label
+% \nfl -- \sfl without subcaption
+% \qfl -- \nfl with label
+% Ex.
+% \begin{figure}[h] %
+%   \centering
+%   \sfl{}{4in}{\figa}
+%   \\
+%   \sfl{}{2in}{\figb}
+%   \sfl{}{2in}{\figc}
+%   \caption{Major Label}
+%   \label{For referencing}
+% \end{figure}
+%% --------------------------------------------------------------------
+
+% Inclusive superscript 
+\newcommand{\ssc}[1]{$^{\text{#1}}$}
+\def\th{\ssc{\normalfont th}}
+\def\st{\ssc{\normalfont st}}
+\def\nd{\ssc{\normalfont nd}}
+\def\ith{\ssc{\it th}}
+\def\ist{\ssc{\it st}}
+\def\ind{\ssc{\it nd}}
+%\newcommand{\ith}[1]{$#1^{\text{\sf th}}$}
+%\newcommand{\ist}[1]{$#1^{\text{\sf st}}$}
+%\newcommand{\ind}[1]{$#1^{\text{\sf nd}}$}
+% Exclusive superscript 
+\newcommand{\xth}[1]{#1\th}
+\newcommand{\xst}[1]{#1\st}
+\newcommand{\xnd}[1]{#1\nd}
+
+\newcommand{\pTle}[2]{{\ltsf\black#1\ }{\ltsf\pDGray#2}}
+\newcommand{\pSect}[2]{{\bfseries\ltsf\pLBlack#1\ }{\bf\small\ltsf\pDGray#2}}
+\newcommand{\pSSect}[2]{{\small\pDGray#1\ }{\tiny\ltsf\pGray#2}}
+
+\newcommand{\pTitle}[2]{{\normalfont\black#1\ }{\normalfont\pDGray#2}}
+\newcommand{\pSection}[2]{{\normalfont\pLBlack#1\ }{\small\pDGray#2}}
+\newcommand{\pSSection}[2]{{\small\pDGray#1\ }{\tiny\pGray#2}}
+
+\def\required#1{\vspace{.25in}{\bfseries\Large\hfill#1\hfill}}
+
+\def\myrule{\hrule height .1pt}
+\newcommand{\myCrule}[1]{#1\myrule}
+\newcommand{\hCrule}[2]{#1\hrule height #2}
+\def\myComboRule{\myCrule{\pDBlue}\hCrule{\pDGray}{.1pt}%
+    \myCrule{\pDGray}\hCrule{\pBlack}{.1pt}%
+}
+
+\newcommand{\pHeaderThree}[3]{{\ltsf\noindent #1 %
+  {\pGray | #2 \hfill #3}} \myComboRule}
+
+\newcommand{\pHeaderSix}[6]{{\ltsf\noindent #1 %
+  {\pGray | #2 | #3 | #4 | #5 \hfill #6}}\myComboRule}
+
+\newcommand{\pStyle}[2][]{{\footnotesize\ltsf #1 %
+  \hfill Page \arabic{page} of #2}}
+
+\newcommand{\fnhref}[2]{\footnote{\href{#1}{#2}}}
+
+\newcommand{\qref}[1]{Equation \pref{#1}}
+\newcommand{\fref}[1]{Figure \pref{#1}}
+\newcommand{\tref}[1]{Table \pref{#1}}

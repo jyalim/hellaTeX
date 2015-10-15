@@ -1,0 +1,44 @@
+% ======================================================================
+% From 
+% http://tex.stackexchange.com/questions/112161/bitcoin-symbol-in-latex
+% ----------------------------------------------------------------------
+
+\def\bitcoinA{%
+  \leavevmode
+  \vtop{ %
+    \offinterlineskip %\bfseries
+    \setbox0=\hbox{\bf B} %
+    \setbox2=\hbox to\wd0{%
+      \hfil\hskip-.10em
+      \vrule height .3ex width .15ex\hskip .08em
+      \vrule height .3ex width .15ex\hfil
+    }
+    \vbox{\copy2\box0}\box2
+  }
+}
+
+\def\bitcoinB{\leavevmode{\setbox0=\hbox{\textsf{B}}%
+    \dimen0\ht0 \advance\dimen0 0.2ex
+    \ooalign{\hfil \box0\hfil\cr
+      \hfil\vrule height \dimen0 depth.2ex\hfil\cr
+    }%
+  }%
+}
+
+\def\bitcoinC{\leavevmode\rlap{\hskip.5pt-}B} 
+
+% ======================================================================
+% From 
+% ctan.org/info/svg-inkscape/InkscapePDFLaTeX.pdf 
+% https://bitcointalk.org/index.php?topic=96438.0
+% with svg provided from 
+% https://en.bitcoin.it/wiki/Bitcoin_symbol
+% ----------------------------------------------------------------------
+
+\newcommand*\btc{%
+  \def\svgwidth{6pt}
+  \input{support/var/btc.pdf_tex}
+}
+
+\newcommand*\BTC{\bitcoinA}
+
