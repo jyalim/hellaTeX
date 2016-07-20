@@ -7,10 +7,13 @@ COPT = -c
 texname = {{texfilename}}
 texfile = tex/$(texname).tex
 
-.PHONY : all clean
+.PHONY : all quick clean
 
 all: 
 	$(LC) $(OPT) $(texfile)
+
+quick:
+	lualatex $(texfile)
 
 clean:
 	# Clear biber cache

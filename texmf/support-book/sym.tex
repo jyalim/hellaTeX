@@ -9,6 +9,7 @@
 \def\Z{\mathbb{Z}}
 \def\C{\mathbb{C}}
 \def\Q{\mathbb{Q}}
+\def\B{\mathbb{B}}
 \def\del{\nabla}
 
 \def\pRT{\vv{r},t}
@@ -22,6 +23,31 @@
 \def\dn{\text{dn}} 
 
 \def\ot{\otimes}
+\def\os{\oplus}
+
+\def\nin{\not\in}
+
+\newcommand{\bdt}[1]{\overset{\bm .}{#1}}
+\newcommand{\bddt}[1]{\overset{\bm ..}{#1}}
+\newcommand{\bdddt}[1]{\overset{\bm ...}{#1}}
+
+\newcommand{\mtrx}[1]{\bm{#1}} %\underline{\underline{#1}}}
+\newcommand{\vctr}[1]{\underline{#1}} %\underline{#1}}
+
+\newcommand{\matr}[1]{\bm{#1}} %\underline{\underline{#1}}}
+\newcommand{\vect}[1]{\bm{#1}} %\underline{#1}}
+
+\newcommand{\bvect}[1]{%
+  \begin{bmatrix*}[r]
+    #1 
+  \end{bmatrix*}
+}
+
+\newcommand{\bvectc}[1]{%
+  \begin{bmatrix*}[c]
+    #1 
+  \end{bmatrix*}
+}
 
 \renewcommand{\vec}[1]{\ensuremath{\mathchoice
   {\mbox{\boldmath$\displaystyle\mathbf{#1}$}}
@@ -35,10 +61,11 @@
 } 
 
 \def\slashmark{$\times$}
-
+\def\pd{\partial}
 \newcommand{\pPD}[2]{\frac{\partial{#1}}{\partial{#2}}}                   % ORDER 1 PARTIAL
 \newcommand{\pSPD}[3]{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}}        % ORDER S PARTIAL
 \newcommand{\pD}[2]{\frac{d{#1}}{d{#2}}}                                  % ORDER 1 STANDARD
+\newcommand{\pMD}[2]{\frac{D{#1}}{D{#2}}}                                 % ORDER 1 Total
 \newcommand{\pSD}[3]{\frac{d^{#3}{#1}}{d{#2}^{3}}}                        % ORDER S STANDARD
 \newcommand{\pGrad}[1]{\pPD{#1}{x} + \pPD{#1}{y} + \pPD{#1}{z}}           % EVAL GRADIENT
 \newcommand{\pLapl}[1]{\pSPD{#1}{x}{2} + \pPD{#1}{y}{2} + \pPD{#1}{z}{2}} % EVAL LAPLACIAN 
@@ -60,6 +87,7 @@
 \DeclarePairedDelimiter\bnorm{\lbrack}{\rbrack}
 \DeclarePairedDelimiter\cnorm{\lbrace}{\rbrace}
 \DeclarePairedDelimiter\anorm{\langle}{\rangle}
+\DeclarePairedDelimiter\vnorm{\lvert}{\rvert}
 
 \newcommand{\sinp}[1]{\sin\pnorm*{#1}}
 \newcommand{\cosp}[1]{\cos\pnorm*{#1}}
@@ -109,6 +137,29 @@
   % User: Heiko Oberdiek
 \def\mm{\matminus}
 
+\DeclareMathOperator*\rank{rank}
+\DeclareMathOperator*\nullity{nullity}
+\DeclareMathOperator*\kernel{kernel}
+\DeclareMathOperator*\range{range}
+\DeclareMathOperator*\Span{span}         % \span conflicts
+\DeclareMathOperator*\codomain{codomain}
+\DeclareMathOperator*\domain{domain}
+\DeclareMathOperator*\dom{dom}
+\DeclareMathOperator*\image{image}
+\DeclareMathOperator*\coimage{coimage}
+\DeclareMathOperator*\argmin{argmin}
+\DeclareMathOperator*\argmax{argmax}
+\DeclareMathOperator*\sign{sign}
+
+\DeclareMathOperator\Li{Li} % Polylogarithm
+\DeclareMathOperator\Cl{Cl} % Clausen 
+\DeclareMathOperator\Sl{Sl} % Clausen (Glaisher-Cl)
+\DeclareMathOperator\Ci{Ci}
+\DeclareMathOperator\Si{Si}
+\DeclareMathOperator\sinc{sinc}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
 \input{support/var/btcsymb.tex}
 \input{support/var/ethsymb.tex}
-

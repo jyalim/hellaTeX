@@ -37,6 +37,18 @@
 \newcommand{\matr}[1]{\bm{#1}} %\underline{\underline{#1}}}
 \newcommand{\vect}[1]{\bm{#1}} %\underline{#1}}
 
+\newcommand{\bvect}[1]{%
+  \begin{bmatrix*}[r]
+    #1 
+  \end{bmatrix*}
+}
+
+\newcommand{\bvectc}[1]{%
+  \begin{bmatrix*}[c]
+    #1 
+  \end{bmatrix*}
+}
+
 \renewcommand{\vec}[1]{\ensuremath{\mathchoice
   {\mbox{\boldmath$\displaystyle\mathbf{#1}$}}
   {\mbox{\boldmath$\textstyle\mathbf{#1}$}}
@@ -125,16 +137,21 @@
   % User: Heiko Oberdiek
 \def\mm{\matminus}
 
-\def\rank{\text{rank}}
-\def\nullity{\text{nullity}}
-\def\range{\text{range}}
-\def\kernel{\text{kernel}}
-\def\nullspace{\text{nullspace}}
-\def\Span{\text{span}}         % \span conflicts
-\def\codomain{\text{codomain}}
-\def\domain{\text{domain}}
-\def\image{\text{image}}
-\def\coimage{\text{coimage}}
+\DeclareMathOperator*\rank{rank}
+\DeclareMathOperator*\nullity{nullity}
+\DeclareMathOperator*\range{range}
+\DeclareMathOperator*\Span{span}         % \span conflicts
+\DeclareMathOperator*\codomain{codomain}
+\DeclareMathOperator*\domain{domain}
+\DeclareMathOperator*\dom{dom}
+\DeclareMathOperator*\image{image}
+\DeclareMathOperator*\coimage{coimage}
+\DeclareMathOperator*\argmin{argmin}
+\DeclareMathOperator*\argmax{argmax}
+\DeclareMathOperator*\sign{sign}
+\DeclareMathOperator*\Li{Li}
+\DeclareMathOperator*\Ci{Ci}
+\DeclareMathOperator*\Si{Si}
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
