@@ -4,14 +4,6 @@
 
 \renewcommand{\qedsymbol}{{\small\hfill$\join$}} % \S
 
-\def\R{\mathbb{R}}
-\def\N{\mathbb{N}}
-\def\Z{\mathbb{Z}}
-\def\C{\mathbb{C}}
-\def\Q{\mathbb{Q}}
-\def\B{\mathbb{B}}
-\def\del{\nabla}
-
 \def\pRT{\vv{r},t}
 \def\condeq{\rho(\pRT) \; c_p(\pRT) \; \pPD{T(\pRT)}{t} = 
   \pLpa{k(\pRT)}{\nabla T(\pRT)} + H(\pRT)}
@@ -47,6 +39,18 @@
   \begin{bmatrix*}[c]
     #1 
   \end{bmatrix*}
+}
+
+\newcommand{\pvect}[1]{%
+  \begin{pmatrix*}[r]
+    #1 
+  \end{pmatrix*}
+}
+
+\newcommand{\pvectc}[1]{%
+  \begin{pmatrix*}[c]
+    #1 
+  \end{pmatrix*}
 }
 
 \renewcommand{\vec}[1]{\ensuremath{\mathchoice
@@ -105,6 +109,7 @@
 \def\Z{\mathbb{Z}}
 \def\C{\mathbb{C}}
 \def\Q{\mathbb{Q}}
+\def\B{\mathbb{B}}
 
 \def\P{\mathbb{P}}
 
@@ -158,3 +163,4 @@
 
 \input{support/var/btcsymb.tex}
 \input{support/var/ethsymb.tex}
+\input{support/var/varsymb.tex}

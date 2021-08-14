@@ -1,51 +1,46 @@
 \documentclass{article}
+\RequirePackage{basic}
 
-%\RequirePackage{mydefs}
-\RequirePackage{mystyle}
+\addbibresource{local.bib}
 
 \def\preparer{Jason Yalim}
 \def\preparerEmail{jyalim@asu.edu}
-\def\preparing{\LaTeX\ Document\ }        % TODO
-\def\preparee{John Matrix}                % TODO
-\def\preparedHeading{Pencil Making}       % TODO
-%\def\prepareeDate{2014 - 4 - 01}          % TODO
-\def\totalpages{5}                        % TODO
-\def\mypagestyle{{\sulfont\pDGray\preparing\ -- \preparer\hfill{\pBlack%
-  Page \arabic{page} of \totalpages}}}
+
+\def\preparing{\LaTeX{} Document}
+\def\preparee{John Matrix}
+\def\preparedDescript{Pencil Making}
+\def\prepareeDate{2021 - 07 - 14}       % TODO 
+
+\newcommand{\mypagestyle}[1]{%
+  {\ltsf\footnotesize{\pGray\preparing\ -- \preparer}%
+  \hfill{\pGray Page {\pDGray\thepage} of \pageref*{#1}}}
+}
 \def\pHS{{\pHeaderSix{\preparer}{\preparerEmail}{%
-  \preparing}{\preparee}{\preparedHeading}{\prepareeDate}}}
+  \preparing}{\preparee}{\preparedDescript}{\prepareeDate}}}
 \def\pHT{{\pHeaderThree{\preparer}{\preparerEmail}{\prepareeDate}}}
 
-\graphicspath{{figs/}}
-\numberwithin{equation}{section}
-\newcommand\mrf[1]{(\ref{#1})}
-
 \begin{document}
-  %\newgeometry{left=1in,right=1in,top=.75in,bottom=.75in}
-  %\fontsize{11}{11}\selectfont
-  \pagestyle{plain}
-  \setcounter{page}{1}
-  \renewcommand{\thepage}{\mypagestyle}
+  \pagestyle{fancy}
   \pHS
   %\pHT
 
-  %\begin{multicols}{2}
+%\frontmatter{\mypagestyle{lpfm}}
+%\label{lpfm}~
 
-  %\section*{\pSection{}{}}
-  %\subsection*{\pPart{}{}}
+\mainmatter{\mypagestyle{lpmm}}
+%\required{}
+% \begin{multicols}{2}
 
-% \begin{figure}[H] %
-%   \centering
-%   \sfl{}{4in}{\figa}
-%   \\
-%   \sfl{}{2in}{\figb}
-%   \sfl{}{2in}{\figc}
-%   \caption{Major Label}
-%   \label{For referencing}
-% \end{figure}
 
-  %\end{multicols}
-  %\myrule
-  %\section*{\pSection{Appendix}{}}
+% \end{multicols}
+
+%\section{Appendix}
+
+\printbibliography
+\label{lpmm}~
+
+%\backmatter{\mypagestyle{lpbm}}
+%\section{Appendix}
+%\printbibliography
+%\label{lpbm}~
 \end{document}
-

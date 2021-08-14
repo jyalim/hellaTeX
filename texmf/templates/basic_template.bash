@@ -22,6 +22,8 @@ cat << ____EOF
   \preparing}{\preparee}{\preparedDescript}{\prepareeDate}}}
 \def\pHT{{\pHeaderThree{\preparer}{\preparerEmail}{\prepareeDate}}}
 
+\input{lib/defs}
+
 \begin{document}
   \pagestyle{fancy}
   \pHS
