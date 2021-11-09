@@ -11,12 +11,12 @@
     \myCrule{\pDGray}\hCrule{\pBlack}{.1pt}%
 }
 
-\newcommand{\pHeaderThree}[3]{{\ltsf\noindent #1 %
-  {\pGray | #2 \hfill #3}} \myComboRule}
+\newcommand{\pHeaderThree}[3]{{\fontSFPro\noindent #1 %
+   | {\color{pBlue} #2 \hfill #3}} \myComboRule}
 
-\newcommand{\pHeaderSix}[6]{{\ltsf\noindent #1 %
-  {\pGray | #2 | #3 | #4 | #5 \hfill #6}}\myComboRule}
+\newcommand{\pHeaderSix}[6]{{\fontSFPro\noindent #1 %
+  {\color{pBlue} | #2 | #3 | #4 | #5 \hfill #6}}\myComboRule}
 
-\newcommand{\pStyle}[2][]{{\footnotesize\ltsf #1 %
+\newcommand{\pStyle}[2][]{{\footnotesize\fontSFPro #1 %
   \hfill Page \arabic{page} of #2}}
 
