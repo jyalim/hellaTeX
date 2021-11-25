@@ -1,10 +1,16 @@
-date_fmt=$(date "+%Y - %m - %d")
+date_fmt=$(date "+%F")
 
 cat << ____EOF
 \documentclass{article}
 \RequirePackage{basic}
 
 \addbibresource{local.bib}
+
+\setmainfont[
+  BoldFont={IBM Plex Serif Bold},
+  ItalicFont={IBM Plex Serif Italic},
+  BoldItalicFont={IBM Plex Serif Bold Italic},
+]{IBM Plex Serif}[Scale=0.9]
 
 \def\preparer{Jason Yalim}
 \def\preparerEmail{jyalim@asu.edu}
@@ -15,12 +21,13 @@ cat << ____EOF
 \def\prepareeDate{${date_fmt}}       % TODO 
 
 \newcommand{\mypagestyle}[1]{%
-  {\ltsf\footnotesize{\pGray\preparing\ -- \preparer}%
-  \hfill{\pGray Page {\pDGray\thepage} of \pageref*{#1}}}
+  {\fontSFPro\footnotesize{\pBlue\preparing\ \pDGray/ \preparer}%
+  \hfill{\pGray {\pDGray\thepage} \textbackslash{} \pageref*{#1}}}
 }
+
+\def\pHT{{\fontSFPro\pHeaderThree{\preparer}{\textbf{\preparing}}{\prepareeDate}}}
 \def\pHS{{\pHeaderSix{\preparer}{\preparerEmail}{%
   \preparing}{\preparee}{\preparedDescript}{\prepareeDate}}}
-\def\pHT{{\pHeaderThree{\preparer}{\preparerEmail}{\prepareeDate}}}
 
 \input{lib/defs}
 
