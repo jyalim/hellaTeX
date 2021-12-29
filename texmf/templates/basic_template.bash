@@ -2,7 +2,7 @@ date_fmt=$(date "+%F")
 
 cat << ____EOF
 \documentclass{article}
-\RequirePackage{basic}
+\RequirePackage{yalim-letter}
 
 \addbibresource{local.bib}
 
@@ -11,6 +11,9 @@ cat << ____EOF
   ItalicFont={IBM Plex Serif Italic},
   BoldItalicFont={IBM Plex Serif Bold Italic},
 ]{IBM Plex Serif}[Scale=0.9]
+
+\setsansfont{SF Pro Display}[Scale=1.0]
+\setmonofont{SF Mono}[Scale=1.0]
 
 \def\preparer{Jason Yalim}
 \def\preparerEmail{jyalim@asu.edu}
