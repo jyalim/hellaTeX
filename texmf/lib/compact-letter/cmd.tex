@@ -1,0 +1,22 @@
+%% Commands ------------------------------------------------------------
+% Contains general commands
+%-----------------------------------------------------------------------
+
+\def\required#1{\vspace{.25in}{\bfseries\Large\hfill#1\hfill}}
+
+\def\myrule{\hrule height .1pt}
+\newcommand{\myCrule}[1]{#1\myrule}
+\newcommand{\hCrule}[2]{#1\hrule height #2}
+\def\myComboRule{\myCrule{\pDBlue}\hCrule{\pDGray}{.1pt}%
+    \myCrule{\pDGray}\hCrule{\pBlack}{.1pt}%
+}
+
+\newcommand{\pHeaderThree}[3]{{\fontSFPro\noindent #1 %
+   | {\color{pBlue} #2 \hfill #3}} \myComboRule}
+
+\newcommand{\pHeaderSix}[6]{{\fontSFPro\noindent #1 %
+  {\color{pBlue} | #2 | #3 | #4 | #5 \hfill #6}}\myComboRule}
+
+\newcommand{\pStyle}[2][]{{\footnotesize\fontSFPro #1 %
+  \hfill Page \arabic{page} of #2}}
+

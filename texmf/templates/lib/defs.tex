@@ -1,45 +1,21 @@
-\definecolor{blue}{HTML}{0000ff}
-\definecolor{red}{HTML}{ff0000}
-
-\def\del{\nabla}
-\def\grad{\del}
-
-%\renewcommand{\labelenumi}{(\alph{enumi})}
-
-\def\Gr{\mbox{\textit{Gr}}}
-\def\Pr{\mbox{\textit{Pr}}}
-\def\Re{\mbox{\textit{Re}}}
-\def\Rn{\mbox{\textit{R\scriptsize{N}}}}
-
-\newcommand{\jref}[1]{\href{#1}{#1}}
-
 \newcommand{\todo}[1]{{\color{red}#1}}
-\newcommand{\flag}[1]{{\color{red}#1}}
 \newcommand{\note}[1]{{\color{blue}#1}}
-\newcommand{\track}[1]{{\color{green!80!black}#1}}
-\newcommand{\resp}[1]{{\color{blue!50!red}#1}}
+\newcommand{\done}[1]{{\color{blue}#1}}
+\newcommand{\diff}[1]{{\color{green!70!black}#1}}
+\newcommand{\this}[1]{{\color{magenta}#1}}
+\newcommand{\what}[1]{{\color{orange}#1}}
+\newcommand{\chck}[1]{{\color{orange}#1}}
+\newcommand{\more}[1]{{\color{red}#1}}
+\newcommand{\less}[1]{{\color{red}#1}}
 
-\titleformat{\part}{\Huge\bfseries\fontSFProDisplay\color{blue}}{PART\ \thepart}{0em}{\fontSFProDisplay~#1}
-\titleformat{\chapter}{\huge\bfseries\fontSFProDisplay\color{blue}}{\S\thechapter.}{0em}{\fontSFProDisplay~#1}
-\titleformat{\section}{\large\bfseries\fontSFProDisplay\color{blue}}{\pGray\thesection}{0em}{~#1}
-\titleformat{\subsection}{\fontSFProDisplay\color{blue}}{\pGray\thesubsection}{0em}{~#1}
-\titleformat{\subsubsection}{\it\fontSFProDisplay\color{blue}}{\pGray\thesubsubsection}{0em}{~#1}
-%\titleformat{name=\chapter,numberless}{\normalfont\large\bf}{}{0em}{#1}
-\titleformat{name=\section,numberless}{\color{blue}\fontSFProDisplay\Large}{}{0em}{#1}
-\titleformat{name=\subsection,numberless}{\color{blue}\fontSFProDisplay\large}{}{0em}{#1}
-\titleformat{name=\subsubsection,numberless}{\color{blue}\fontSFProDisplay\it}{}{0em}{#1}
-
-
-\setmainfont{IBM Plex Serif}[Scale=0.9]
-
-\urlstyle{same}
-
-\hypersetup{
-  breaklinks=true,
-  colorlinks,
-  citecolor=blue,
-  linkcolor=blue,
-  urlcolor=blue,
-}
-
-\setcounter{tocdepth}{3}
+\newcommand{\yell}[1]{{\bfseries\color{red}#1}}
+\newcommand{\YELL}[1]{{\bfseries\color{red}#1}}
+\newcommand{\TODO}[1]{{\bfseries\color{red}#1}}
+\newcommand{\NOTE}[1]{{\bfseries\color{blue}#1}}
+\newcommand{\DONE}[1]{{\bfseries\color{blue}#1}}
+\newcommand{\DIFF}[1]{{\bfseries\color{green!70!black}#1}}
+\newcommand{\THIS}[1]{{\bfseries\color{magenta}#1}}
+\newcommand{\WHAT}[1]{{\bfseries\color{orange}#1}}
+\newcommand{\CHCK}[1]{{\bfseries\color{orange}#1}}
+\newcommand{\MORE}[1]{{\bfseries\color{red}#1}}
+\newcommand{\LESS}[1]{{\bfseries\color{red}#1}}
